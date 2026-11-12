@@ -83,5 +83,8 @@ export function readNight(runsDir: string, night: string): ReadNightResult {
     }
   }
 
-  return { rows: [...jobs.values()].map(({ row }) => row), malformedLines };
+  const rows = [...jobs.values()].map(({ row }) => row);
+  rows.sort((a, b) => a.job.localeCompare(b.job));
+
+  return { rows, malformedLines };
 }
