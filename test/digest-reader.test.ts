@@ -3,11 +3,12 @@ import { readNight } from '../src/digest/read-night.js';
 
 describe('readNight', () => {
   it('aggregates jobs and counts malformed lines separately from rows', () => {
-    const { rows, malformedLines } = readNight('runs', '2026-10-28');
+    const { rows, malformedLines, statusCounts } = readNight('runs', '2026-10-28');
     const byJob = new Map(rows.map((row) => [row.job, row]));
 
     expect(rows).toHaveLength(5);
     expect(malformedLines).toBe(1);
+    expect(statusCounts).toEqual({ ok: 10, retry: 4, fail: 1 });
     expect(byJob.get('rig/rotate-logs')).toEqual({
       job: 'rig/rotate-logs',
       owner: 'lane-07',

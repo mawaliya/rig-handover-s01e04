@@ -12,6 +12,7 @@ export type DigestRow = {
 export type ReadNightResult = {
   rows: DigestRow[];
   malformedLines: number;
+  statusCounts: Record<DigestRow['lastStatus'], number>;
 };
 
 export declare function readNight(runsDir: string, night: string): ReadNightResult;

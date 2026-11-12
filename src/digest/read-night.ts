@@ -32,6 +32,7 @@ export function readNight(runsDir: string, night: string): ReadNightResult {
 
   const jobs = new Map<string, { row: DigestRow; firstTime: number; lastTime: number }>();
   let malformedLines = 0;
+  const statusCounts = { ok: 0, retry: 0, fail: 0 };
 
   for (const line of lines) {
     let value: unknown;
@@ -47,6 +48,7 @@ export function readNight(runsDir: string, night: string): ReadNightResult {
       continue;
     }
 
+    statusCounts[value.status] += 1;
     const time = Date.parse(value.at);
     const existing = jobs.get(value.job);
 
@@ -86,5 +88,5 @@ export function readNight(runsDir: string, night: string): ReadNightResult {
   const rows = [...jobs.values()].map(({ row }) => row);
   rows.sort((a, b) => a.job.localeCompare(b.job));
 
-  return { rows, malformedLines };
+  return { rows, malformedLines, statusCounts };
 }
