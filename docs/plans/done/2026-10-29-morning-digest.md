@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-11-12
 ---
 
 # Morning digest
@@ -77,3 +78,16 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Link |
+| --- | ------- | ------ |
+| 1 | Define digest contract | <https://github.com/mawaliya/rig-handover-s01e04/issues/1> |
+| 2 | Read nightly run logs | <https://github.com/mawaliya/rig-handover-s01e04/issues/2> |
+| 3 | Render digest page | <https://github.com/mawaliya/rig-handover-s01e04/issues/3> |
+| 4 | Add digest JSON endpoint | <https://github.com/mawaliya/rig-handover-s01e04/issues/4> |
+| 5 | Link digests from status board | <https://github.com/mawaliya/rig-handover-s01e04/issues/5> |
+| 6 | Test digest routes | <https://github.com/mawaliya/rig-handover-s01e04/issues/6> |
+| 7 | Publish review preview | <https://github.com/mawaliya/rig-handover-s01e04/issues/7> |
+| 8 | Remove preview marker and finish plan | <https://github.com/mawaliya/rig-handover-s01e04/issues/8> |
